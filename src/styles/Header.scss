@@ -1,0 +1,110 @@
+@use "main";
+
+//Left side header scss code linked to Header.jsx
+
+header {
+    background-color: main.$background-color;
+    padding: 2rem;
+    width: 50%;
+    height: 100vh;
+
+    li {
+        list-style: none;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+
+        ul {
+            background-color: main.$white-color;
+            display: inline-flex;
+            flex-direction: row;
+            justify-content: center;
+            padding: 1em;
+            gap: 2rem;
+            border-radius: 2em;
+        }
+
+        a {
+            color: main.$gray-color;
+            font-family: "Inder", sans-serif;
+            text-decoration: none;
+            transition: color 0.3s;
+
+            &:hover {
+                color: main.$black-color;
+            }
+
+            //Home link
+            &[href="/"] {
+                &:is(:link, :visited) {
+                    color: main.$black-color;
+                }
+            }
+        }
+    }
+
+    .header-content {
+        margin-top: 12%;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+            font-size: 6rem;
+            color: main.$header-text-color;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-family: "Gasoek One", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            line-height: 0.9;
+            padding: 2rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: main.$header-text-color;
+            font-family: "Inder", sans-serif;
+            text-align: center;
+        }
+
+        img {
+            align-self: center;
+            width: 40%;
+            min-width: 14rem;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .locations-list {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        overflow: hidden;
+        padding: 1rem 2rem;
+        background-color: main.$background-color;
+
+        p {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll-left 30s linear infinite;
+            color: main.$header-text-color;
+            font-family: "Inder", sans-serif;
+            font-size: 1rem;
+        }
+    }
+
+    @keyframes scroll-left {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+}

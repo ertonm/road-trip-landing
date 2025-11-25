@@ -1,0 +1,47 @@
+@use "main";
+
+.hero-container {
+    background-image: url("../images/hero-image.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .Featured-Article {
+        background-color: main.$white-color;
+        padding: 1em 1em;
+        max-width: 17em;
+        box-shadow: 0 0 1em main.$gray-color;
+        border-radius: 1em;
+
+        img {
+            width: 15em;
+            height: 15em;
+            object-fit: cover;
+            border-radius: 1em;
+        }
+
+        h2 {
+            font-family: "Inder", sans-serif;
+            text-align: center;
+            color: main.$text-color;
+        }
+
+        p {
+            margin-top: 1em;
+            font-family: "Inder", sans-serif;
+            text-align: center;
+            color: main.$gray-color;
+        }
+    }
+
+}
